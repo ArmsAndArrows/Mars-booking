@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="shortcut icon" href="./assets/mars-favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Mars booking.</title>
+  </head>
+  <body>
+    <!--carousel-->
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="slide">
+          <img src="./assets/smoke_1.png" alt="Image 1">
+        </div>
+        <div class="slide">
+          <img src="./assets/smoke_2.png" alt="Image 2">
+        </div>
+       </div>
+    </div>
+
+    <!--header-->
+    <header class="top">
+      <nav class="navigation">
+        <img src="./assets/Logo.svg" />
+        <button class="navigation__btn"><svg width="50px" height="50px" viewBox="0 0 28 28" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M3 7C3 6.44771 3.44772 6 4 6H24C24.5523 6 25 6.44771 25 7C25 7.55229 24.5523 8 24 8H4C3.44772 8 3 7.55229 3 7Z" fill="#ffffff"/><path d="M3 14C3 13.4477 3.44772 13 4 13H24C24.5523 13 25 13.4477 25 14C25 14.5523 24.5523 15 24 15H4C3.44772 15 3 14.5523 3 14Z" fill="#ffffff"/><path d="M4 20C3.44772 20 3 20.4477 3 21C3 21.5523 3.44772 22 4 22H24C24.5523 22 25 21.5523 25 21C25 20.4477 24.5523 20 24 20H4Z" fill="#ffffff"/></svg></button>
+        <section class="navigation__items">
+
+          <ul class="navigation__list">
+            <li class="navigation__item"><a href="#">О Марсе</a></li>
+            <li class="navigation__item"><a href="#">Процесс</a></li>
+            <li class="navigation__item"><a href="#">Билеты</a></li>
+            <li class="navigation__item"><a href="#">Новости</a></li>
+            <li class="navigation__item"><a href="#">Контакты</a></li>
+          </ul>
+          <button class="navigation__cta">Купить билеты</button>
+        </section>
+      </nav>
+    </header>
+    <!--main-->
+    <main class="home">
+      <section class="home__container">
+        <div class="home__bar">
+          <div class="home__bar--inner">
+            <svg
+              width="2"
+              viewBox="0 0 2 597"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0H2V597H0V0Z" fill="#D9D9D9" />
+            </svg>
+          </div>
+        </div>
+
+        <span class="home__span">Точка Назначения:</span>
+
+        <!--TITLE-->
+        <div class="title">
+          <h1 class="title__hidden" aria-label="Марс">Марс</h1>
+          <video class="title__video" muted loop autoplay>
+            <source src="./assets/marsvid.mp4">
+            </source>
+          </video>
+          <svg >
+            <clipPath id="text-overlay" width="100%" height="40%">
+              <text class="title__text" id="title" x="0" y="0" dy="1.58em">Mapc</text>
+            </clipPath>
+          </svg>
+        </div>
+
+        <!-- <h1 class="home__title">Марс</h1> -->
+      </section>
+      <section class="pop-up">
+        <section class="pop-up__top">
+          <h2 class="pop-up__title">Бронирование билетов</h2>
+          <button class="pop-up__close">
+            <img src="./assets/Close.svg" />
+          </button>
+        </section>
+        <form class="pop-up__form">
+          <div class="pop-up__form-item">
+            <label for="date-in">Дата заезда</label>
+            <input id="date-in" type="date" />
+            <span class="pop-up__error pop-up__error--1"></span>
+          </div>
+          <div class="pop-up__form-item">
+            <label for="date-out">Дата выезда</label>
+            <input id="date-out" type="date" />
+            <span class="pop-up__error pop-up__error--2"></span>
+          </div>
+          <div class="pop-up__form-item">
+            <label for="amount">Количество</label>
+            <input id="amount" type="text" />
+            <span class="pop-up__error pop-up__error--3"></span>
+          </div>
+          <button id="pop-up_btn" class="pop-up__cta">Купить билеты</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
+

@@ -1,0 +1,175 @@
+/////NAVIGATION
+@import "animations";
+@import "variables";
+
+.top {
+    position: relative;
+    width: 100vw;
+}
+
+.navigation {
+    display: flex;
+    width: clamp(30rem, 80%, 120rem);
+    position: relative;
+    align-items: center;
+
+    justify-content: space-between;
+    padding-top: 4rem;
+    margin: 0 auto;
+
+    &__btn {
+        transition: $t-all;
+        position: absolute;
+        right: 0;
+        z-index: 1100;
+        @media (min-width: 1150px) {
+            display: none;
+        }
+        &:hover path {
+            transition: $t-all;
+            fill: $color-red;
+        }
+    }
+
+    &__items {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        @media (max-width: 1150px) {
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        &--active {
+            display: flex;
+        }
+        @media (max-width: 1150px) {
+            display: none;
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 3rem;
+        padding: 0;
+        @media (max-width: 1150px) {
+            flex-direction: column;
+        }
+    }
+    &__item {
+        position: relative;
+        display: block;
+        -webkit-tap-highlight-color: $color-red;
+        a {
+            text-decoration: none;
+            color: $color-white;
+            transition: $t-all;
+        }
+        a::after {
+            content: "";
+            position: absolute;
+            margin-top: 5.4rem;
+
+            left: 0;
+            bottom: -0.5rem;
+            width: 0;
+            height: 1px;
+            background-color: transparent;
+            transition: $t-med;
+            transition-delay: 0.15s;
+        }
+
+        a:hover,
+        a:active {
+            color: $color-red;
+            &::after {
+                content: "";
+                position: absolute;
+                margin-top: 5.4rem;
+
+                left: 0;
+
+                width: 100%;
+                height: 1px;
+                background-color: $color-red;
+            }
+        }
+
+        font-style: normal;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    &__cta {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        color: $color-black;
+        background: $color-white;
+        border-radius: 4px;
+        padding: 1rem 1.5rem;
+        transition: $t-all;
+        &:hover {
+            background-color: $color-red;
+            color: $color-white;
+        }
+    }
+}
+
+.active {
+    animation: slideIn linear 0.2s;
+    transform: translateX(0%);
+    display: block;
+}
+
+.active-list {
+    animation: opaqueIn linear 0.2s;
+    transform: translateX(0%);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+    background: rgba($color-black, 0.5);
+    padding: 2rem 5rem;
+    border: 1px solid $color-beige;
+    border-radius: 4px;
+    z-index: 1000;
+    width: 100%;
+    overflow: hidden;
+    height: 51rem;
+    @media (max-height: 580px) {
+        height: 41rem;
+    }
+    @media (max-height: 470px) {
+        height: 37rem;
+    }
+    @media (max-height: 425px) {
+        height: 33rem;
+    }
+    @media (max-height: 375px) {
+        height: 31rem;
+    }
+    @media (max-height: 350px) {
+        height: 28rem;
+        flex-direction: row;
+    }
+    @media (max-height: 330px) {
+        height: 26rem;
+    }
+}
+
+.hidden {
+    transform: translateX(-100%);
+    animation: slideOut linear 0.2s, opaque 1s ease;
+}
+.nodisp {
+    display: none;
+}

@@ -1,0 +1,32 @@
+.carousel-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.65;
+    z-index: 0;
+}
+
+.carousel {
+    display: flex;
+    position: absolute;
+
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: floatCarousel 40s 3s ease infinite, carouselReveal 4s linear;
+}
+
+.slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
